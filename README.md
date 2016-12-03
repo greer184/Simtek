@@ -1,6 +1,6 @@
-# Semtek
+# Simtek
 
-Source code for Semtek's Secure Webpage.
+Source code for Simtek's Secure Webpage.
 
 ### Contributors:
 
