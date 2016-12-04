@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get '/help', to: 'static#help'
   get '/contact', to: 'static#contact'
   get '/create', to: 'users#new'
+  resources :users
+
+  devise_for :users, controllers: { registrations: "registrations" }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

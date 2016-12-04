@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SemtekApp</title>
+  <title>SimtekApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<h1>Semtek</h1>
+	<h1>Simtek</h1>
 	<ul>
 		<li><%= link_to "Home",   	root_path %></li>
 	     	<li><%= link_to "Software",   	software_path %></li>
@@ -15,6 +15,9 @@
 		<li><%= link_to "Help", 	help_path %></li>
 		<li><%= link_to "Contact Us", 	contact_path %></li>
 	</ul>
+        <% flash.each do |message_type, message| %>
+	        <h3><%= message %></h3>
+	<% end %>
 	<%= yield %>
 </body>
 </html>

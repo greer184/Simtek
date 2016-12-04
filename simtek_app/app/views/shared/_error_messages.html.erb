@@ -1,0 +1,6 @@
+<% if @user.errors.any? %>
+  Oops. It appears you have errors.
+  <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+<% end %>
