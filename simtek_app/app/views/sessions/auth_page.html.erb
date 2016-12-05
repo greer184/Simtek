@@ -1,0 +1,7 @@
+<h1>Authenticate</h1>
+<p>Please enter the code that was sent to your email to finish logging in.</p>
+<%= form_for(:session, url: finish_login_path) do |f| %>
+  <%= f.label :code %>
+  <%= f.text_field :code %>
+  <%= f.submit 'Enter' %>
+<% end %>

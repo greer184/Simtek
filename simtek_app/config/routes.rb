@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get '/help', to: 'static#help'
   get '/contact', to: 'static#contact'
   get '/create', to: 'users#new'
+  get '/login_page', to: 'sessions#new'
+  get '/authenticate', to: 'sessions#auth_page'
+  post '/login', to: 'sessions#create'
+  post '/finish_login', to: 'sessions#finish_login'
   resources :users
 
   devise_for :users, controllers: { registrations: "registrations" }
