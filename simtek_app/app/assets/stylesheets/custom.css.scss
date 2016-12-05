@@ -3,6 +3,10 @@
 
 /* General */
 
+h1, h2, h3, h4, h5, p, label, ul {
+  color: #ffffff;
+}
+
 body {
   padding-top: 100px;
   background-color: #2f4f4f;
@@ -22,8 +26,32 @@ body {
   align-items: center;
 }
 
-h1, h2, h3, h4, h5, p, label, ul {
-  color: #ffffff;
+/* Homepage */
+
+.signature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 30px 0px;
+}
+
+#hometitle {
+  margin: 5px 50px;
+  h1 {
+     font-size: 4em;
+  }
+}
+
+#motto {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin: 15px;
+  p {
+    font-size: 1.2em
+  }
 }
 
 /* Header */
