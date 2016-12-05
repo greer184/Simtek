@@ -20,9 +20,11 @@
       </nav>
     </div>
   </header>
-  <% flash.each do |message_type, message| %>
-    <h3><%= message %></h3>
-  <% end %>
+  <div class="container">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+  <div>
   <div class="container">
     <%= yield %>
   </div>

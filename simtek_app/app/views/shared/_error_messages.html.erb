@@ -1,6 +1,12 @@
 <% if @user.errors.any? %>
-  Oops. It appears you have errors.
-  <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
+  <div id="error_explnation">
+    <div class="alert alert-danger">
+      Oops. It appears you have errors.
+    </div>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
