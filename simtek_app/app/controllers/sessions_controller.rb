@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to authenticate_path
     else
       flash.now[:danger] = 'Invalid email or password'
-      render new
+      render 'new'
     end
   end
 
@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
       @@code = ''
       log_out
       flash.now[:danger] = 'Code was incorrect. Please log in again'
-      redirect_to login_page_path
+      render 'new'
     end
 
   end

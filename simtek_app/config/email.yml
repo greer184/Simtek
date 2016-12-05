@@ -1,14 +1,16 @@
 development:
   :address: smtp.gmail.com
   :port: 587
-  :authentication: plain
+  :authentication: login
   :user_name: simtekapp@gmail.com
-  :password: simtekapp_password
+  :password: simtek_password
+  :domain: google.com
   :enable_starttls_auto: true
 production:
   :address: smtp.gmail.com
   :port: 587
-  :authentication: plain
+  :authentication: login
   :user_name: simtekapp@gmail.com
-  :password: simtekapp_password
+  :password: simtek_password
+  :domain: google.com
   :enable_starttls_auto: true
