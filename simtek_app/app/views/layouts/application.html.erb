@@ -7,17 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<h1>Simtek</h1>
-	<ul>
-		<li><%= link_to "Home",   	root_path %></li>
-	     	<li><%= link_to "Software",   	software_path %></li>
-	        <li><%= link_to "About", 	about_path %></li>
-		<li><%= link_to "Help", 	help_path %></li>
-		<li><%= link_to "Contact Us", 	contact_path %></li>
+  <header class="navbar-fixed-top">
+    <div class="container">
+      <nav>
+	<ul class="nav navbar-nav navbar-right">
+	  <li><%= link_to "Home",   	root_path %></li>
+	  <li><%= link_to "Software",   software_path %></li>
+	  <li><%= link_to "About", 	about_path %></li>
+	  <li><%= link_to "Help", 	help_path %></li>
+	  <li><%= link_to "Contact Us", contact_path %></li>
 	</ul>
-        <% flash.each do |message_type, message| %>
-	        <h3><%= message %></h3>
-	<% end %>
-	<%= yield %>
+      </nav>
+    </div>
+  </header>
+  <% flash.each do |message_type, message| %>
+    <h3><%= message %></h3>
+  <% end %>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
