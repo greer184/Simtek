@@ -17,6 +17,8 @@ class SessionsController < ApplicationController
     #made a class variable so that it persists instances
     @@code = rand.to_s[2..8]
     @user = current_user
+    @@auth = @user
+    log_out
     TwoFactorMailer.send_authentication_code(@user, @@code).deliver_now
   end
 
@@ -24,11 +26,14 @@ class SessionsController < ApplicationController
     code = params[:session][:code]
     puts code
     if code && @@code == code
+      log_in @@auth
       @@code = ''
+      @@auth = ''
       flash[:success] = "Welcome to Simtek. Let's Get Started."
       redirect_to current_user
     else
       @@code = ''
+      @@auth = ''
       log_out
       flash.now[:danger] = 'Code was incorrect. Please log in again'
       render 'new'
