@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/authenticate', to: 'sessions#auth_page'
   post '/login', to: 'sessions#create'
   post '/finish_login', to: 'sessions#finish_login'
+  delete 'logout', to: 'sessions#destroy'
   resources :users
 
   devise_for :users, controllers: { registrations: "registrations" }

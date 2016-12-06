@@ -25,8 +25,8 @@ class SessionsController < ApplicationController
     puts code
     if code && @@code == code
       @@code = ''
-      flash[:success] = "Welcome to Simtek. Sign in to Start."
-      redirect_to root_path
+      flash[:success] = "Welcome to Simtek. Let's Get Started."
+      redirect_to current_user
     else
       @@code = ''
       log_out
@@ -37,6 +37,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-
+    log_out
+    redirect_to root_path
   end
 end
