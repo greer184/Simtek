@@ -1,13 +1,59 @@
-<h1>Update Your Password</h1>
+<% if @user.subscription = "Change" %>
+  <h1>Choose Subscription Plan</h1>
 
-<%= form_for(@user) do |f| %>
-  <%= render 'shared/error_messages' %>
+  <h4>No Plan</h4>
+  <ul>
+    <li>15 GB of Space</li>
+    <li>10 Render Hours per Month</li>
+  </ul>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
+  <h4>Silver Plan: $30 per month </h4>
+  <ul>
+    <li>24/7 Customer Support</li>
+    <li>500 GB of Space</li>
+    <li>100 Render Hours per month</li>
+  </ul>
 
-  <%= f.label :password_confirmation, "Confirm Password" %>
-  <%= f.password_field :password, class: 'form-control' %>
+  <h4>Gold Plan: $60 per month</h4>
+  <ul>
+    <li>24/7 Customer Support</li>
+    <li>2 TB of Space</li>
+    <li>250 Render Hours per month</li>
+    <li>Simtek Plus Toolset</li>
+    <li>Simtek Simulation Tutorial Course</li>
+  </ul>
+   
+  <h4>Platinum Plan: $120 per month</h4>
+  <ul>
+    <li>24/7 Customer Support</li>
+    <li>Unlimited Space</li>
+    <li>Unlimited Render Hours</li>
+    <li>Simtek Plus, Advanced Physics, Fluid Dynamics Toolsets</li>
+    <li>Simtek Simulation Tutorial Course</li>
+    <li>1-on-1 Training By Our Awesome Design Team</li> 
+  </ul>
 
-  <%= f.submit "Save Changes", class: "btn btn-primary" %>
+  <%= form_for(@user) do |f| %>
+    <%= f.select :subscription, 
+	[['None','None'],
+	['Silver Plan', 'Silver'],
+        ['Gold Plan', 'Gold'], 
+        ['Platinum Plan', 'Platinum']] %>
+    <%= f.submit "Save Changes", class: "btn btn-primary" %>
+  <% end %>
+  
+<% else %> 
+  <h1>Update Your Password</h1>
+
+  <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+
+    <%= f.label :password_confirmation, "Confirm Password" %>
+    <%= f.password_field :password, class: 'form-control' %>
+
+    <%= f.submit "Save Changes", class: "btn btn-primary" %>
+  <% end %>
 <% end %>
