@@ -1,1 +1,17 @@
-<h1>This will be users page w/ subscriptions etc.</h1>
+<% if @admin %>
+  <h1>Employee Portal</h1>
+  <p>Welcome, <%= @user.name %>. </p>
+<% else %>
+  <h1>User Portal</h1>
+  <p>Hello, <%= @user.name %>. Hope you are having a great day!</p>
+  <h2>Subscriptions</h2>
+  <% if @user.subscription == "None" %>
+    <p> You currently have no subscriptions </p>
+  <% else %>
+    <p class="subscription"> Current Subscription Plan: 
+      <%= @user.subscription %> Plan </p>
+  <% end %>
+    <%= link_to "Update Subscriptions", 
+        edit_user_path(current_user, :subscription => "Change"), 
+        class: "btn btn-primary" %>
+<% end %>
