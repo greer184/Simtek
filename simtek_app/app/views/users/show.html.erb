@@ -1,6 +1,14 @@
 <% if @admin %>
   <h1>Employee Portal</h1>
   <p>Welcome, <%= @user.name %>. </p>
+
+  <h2>Recent Business Level Subscriptions</h2>
+  <ul>
+    <% @subs.each do |sub| %>
+      <li><%= sub.group %>, <%= sub.plan %>, Payment: $<%= sub.payment %> 
+	on <%= sub.date %></li> 
+    <% end %>
+  <ul>
 <% else %>
   <h1>User Portal</h1>
   <p>Hello, <%= @user.name %>. Hope you are having a great day!</p>

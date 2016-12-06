@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group: MyString
+  type: 
+  date: 2016-12-06
+  payment: 1
+
+two:
+  group: MyString
+  type: 
+  date: 2016-12-06
+  payment: 1

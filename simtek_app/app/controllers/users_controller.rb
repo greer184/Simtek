@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @admin = @user.admin
+    @subs = Subscription.all
   end
 
   def new
