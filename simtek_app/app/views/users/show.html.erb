@@ -1,1 +1,7 @@
-<h1>This will be users page w/ subscriptions etc.</h1>
+<% if @admin %>
+<h1>Employee Portal</h1>
+<p>Welcome, <%= @user.name %>. </p>
+<% else %>
+<h1>User Portal</h1>
+<p>Hello, <%= @user.name %>. Hope you are having a great day!</p>
+<% end %>
