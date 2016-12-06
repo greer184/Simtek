@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   end
   
   def edit 
+    @subscription = params[:subscription]
     @user = User.find(params[:id])
   end
 
